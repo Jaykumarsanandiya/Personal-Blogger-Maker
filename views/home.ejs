@@ -1,1 +1,26 @@
+<%- include("partials/header") %> 
+
+
+
+
 <h1>Home</h1>
+
+<%= homeStartingContentEJS  %> 
+
+
+
+
+<% for(let i=0; i< postsEJS.length ; i++){ %>
+    <h1> <%= postsEJS[i].blogTitle;  %></h1>
+
+   
+ 
+
+    <p> <%= postsEJS[i].blogSummary; %> ...  
+        <a href="/posts/<%= postsEJS[i].blogTitle.replace(/ /g, "-");%>"> Read More </a>
+      
+        
+        </p> 
+    <%  }; %>
+
+<%- include("partials/footer") %>
